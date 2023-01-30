@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Users</title>
+</head>
+<body>
+<h2>Список пользователей</h2>
+<br/>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Имя</th>
+        <th scope="col">Фамилия</th>
+        <th scope="col">Возраст</th>
+        <th scope="col">Email</th>
+        <th scope="col">Пароль</th>
+        <th scope="col">Роль</th>
+        <th scope="col">Действия</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each ="user: ${user}">
+        <td th:text="${user.getId()}">
+        <td th:text="${user.getName()}">
+        <td th:text="${user.getLastName()}">
+        <td th:text="${user.getAge()}">
+        <td th:text="${user.getEmail()}">
+        <td th:text="${user.getPassword()}">
+        <td th:text="${user.getRole()}">
+        <td>
+        <a th:href="@{/user/{id}(id=${user.getId()})}">
+            <input type="submit" value="Просмотреть"/>
+        </a>
+        <td/>
+    </tbody>
+
+</table>
+<style>
+
+    table {
+        border: 1px solid grey;
+        border-collapse: collapse;
+        width: 50%;
+    }
+    td {
+        border: 1px solid grey;
+    }
+    th {
+        border: 1px solid grey;
+    }
+
+
+</style>
+
+<br/>
+<hr/>
+
+<a th:href="@{/user/new}">
+    <input type="submit" value="Новый пользователь"/>
+
+</a>
+</body>
+</html>
