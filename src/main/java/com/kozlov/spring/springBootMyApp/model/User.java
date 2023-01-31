@@ -1,7 +1,6 @@
 package com.kozlov.spring.springBootMyApp.model;
 
 
-
 import jakarta.persistence.*;
 
 
@@ -10,19 +9,12 @@ import jakarta.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private int id;
-    @Column(name = "name")
     private String name;
-    @Column(name = "last_name")
     private String lastName;
-    @Column(name = "age")
     private int age;
-    @Column(name = "email")
     private String email;
-    @Column(name = "password")
     private String password;
-    @Column(name = "role")
     private String role;
 
     public User() {

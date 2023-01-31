@@ -1,7 +1,6 @@
 package com.kozlov.spring.springBootMyApp.dao;
 
 
-
 import com.kozlov.spring.springBootMyApp.model.User;
 
 import java.util.List;
